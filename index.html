@@ -1,0 +1,296 @@
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta charset="utf-8">
+		<meta name="description" content="Create multi-language subtitles easily.">
+		<meta name="author" content="ShellAddicted">
+		<meta name="keywords" content="subtitle, subtitles , srt, subrip, dualsub, language, languages">
+
+		<link rel="icon" href="">
+
+		<title>DualSub Creator</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+		<!-- Custom CSS -->
+		<link href="css/stylesheet.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="logoZone">
+			<h1>DualSub --> Creator</h1>
+		</div>
+		<div class="jumbotron">
+			<div id="slidesZone" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="row justify-content-center align-items-center introText">
+							<div class="col-md-3 order-md-2">
+								<img src="images/screenshot.jpg" /><br />
+								Silicon Valley © S01E08 - HBO©
+							</div>
+							<div class="col-md-6 order-md-1">
+								<span class="styleA">Are you trying to learn a new language?</span> <br/>
+								<span class="styleB">do you want train yourself watching your favourite Movies and TV Shows?</span><br>
+								<strong class="styleC">This tool can help you!</strong><br>
+								<a data-target="#slidesZone" data-slide-to="1" href="#">
+									<input type="button" class="btn btn-primary" style="margin: 1.3em" value="Show me how!"/>
+								</a>
+								
+							</div>
+						</div>
+					</div>
+					
+					<div class="carousel-item">
+						<div class="row justify-content-center align-items-center introText">
+							<div class="col-md-6 order-md-1">
+								<h2>How it Works?</h2>
+								<div style="text-align: left">
+									<ol>
+										<li>Download Subtitles for your TV Show (e.g.: from <a href="https://opensubtitles.org" alt="OpenSubtitles">OpenSubtitles</a>¹)</li>
+										<li>Drag & Drop (or upload with <i>'Browse...'</i> button) the subtitles files (.srt) in SubtitleA/B Sections <br />
+											(Place the subtitle with the best <i>sync</i> with your video file in <i>SubtitleA</i>)
+										</li>
+										<li>
+											(Optional) Set a custom style (Color,Font,etc...)² for your subtitles.
+										</li>
+										<li>Click <i>Generate</i> and save the file. <span class="good">Done!</span></li>
+									</ol>
+								</div>
+								<div class="xyz">
+									<h2>Compatibility</h2>
+									<p>
+										for an optimal experience, you should use <a href="https://videolan.org">VLC media player</a>¹ <br />
+									</p>
+									<table id="compatibilityTable" border="1">
+										<tr>
+											<th>Player</th>
+											<th>Alignment</th>
+											<th>Style</th>
+											<th>Color</th>
+										</tr>
+										<tr>
+											<td>
+												Kodi (v17.5)¹
+											</td>
+											<td>
+												<span class="bad">NO</span>
+											</td>
+											<td>
+												<span class="bad">NO</span>
+											</td>
+											<td>
+												<span class="good">YES</span>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<span class="good">VLC (v2.2)</span>¹
+											</td>
+											<td>
+												<span class="good">YES</span>
+											</td>
+											<td>
+												<span class="good">YES</span>
+											</td>
+											<td>
+												<span class="good">YES</span>
+											</td>
+										</tr>
+									</table>
+								</div>
+
+								<div class="microText" style="text-align:left">
+									<!-- Disclaimer -->
+									<span>1: I suggest it,because it's the one that I use,I am <b>not</b> affiliated with it in any way.</span><br />
+									<span>2: Check if your media player supports stylized subtitles.</span>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<a class="carousel-control-prev" href="#slidesZone" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+
+				<a class="carousel-control-next" href="#slidesZone" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+
+				<ol class="carousel-indicators custom-carousel-indicators">
+					<li data-target="#slidesZone" data-slide-to="0" class="active"></li>
+					<li data-target="#slidesZone" data-slide-to="1"></li>
+				</ol>
+			</div>
+		</div>
+
+		<!-- fork me on GitHub -->
+		<a href="https://github.com/ShellAddicted/DualSubCreator">
+			<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+		</a>
+		<!-- end -> fork me on GitHub -->
+
+		<div id="mainContainer" class="container">
+			
+			<!-- here will be shown Errors, Warnings etc... -->
+			<div id="bsalert" class="alert" role="alert">
+				<span></span>
+			</div>
+
+			<!-- First Row -->
+			<div id="row1" class="row justify-content-between">
+				<div class="col-md-6 subCol" id="colA">
+					<h2>Subtitle A <span class="badge badge-info">Sync</span></h2>
+
+					<div class="dropZone">
+						<div class="uploadSrt dropZoneItem">
+							<!-- input[type=file] will be hidden by css -->
+							<input type="file"/>
+							<span>Drop subtitle file here or <input type="button" class="btn btn-primary btn-primary-dark browseButton" value="Browse..."/></span><br />
+							<span class="microText">supported: SubRip (.srt)</span>
+						</div>
+						<div class="dropZoneItem">
+							<div class="fileLabel"></div>
+							<input type="button" class="btn btn-link btn-link-ptop0 resetLink" value="Remove File"/>
+						</div>
+					</div>
+
+					<div class="options">
+						<!-- suggested options -->
+						<div class="row justify-content-center">
+							<div class="col-xs-auto">
+								<div class="suggestedOptions">
+									<div class="dropdown dropdown-dark">
+										<button class="btn btn-primary btn-primary-dark dropdown-toggle" type="button" id="loadProfileDropDownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											(Optional) Load Style
+										</button>
+										<div class="dropdown-menu" aria-labelledby="loadProfileDropDownBtn">
+											<button type="button" class="dropdown-item custom-dropdown-item" data-suggestedOptionID="1">Default</button>
+											<button type="button" class="dropdown-item custom-dropdown-item" data-suggestedOptionID="2">Style 1</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Styles -->
+						<div class="row justify-content-center">
+							<div class="col-xs-auto">
+								<div class="option" data-optionName="style">
+									<h4>Style</h4>
+									<div class="btn-group styles" data-toggle="buttons">
+										<label class="btn btn-sm btn-primary btn-primary-dark active">
+											<input type="radio" value="Default" autocomplete="off">Default
+										</label>
+										<label class="btn btn-sm btn-primary btn-primary-dark">
+											<input type="radio" value="underline" autocomplete="off"><u>underline</u>
+										</label>
+										<label class="btn btn-sm btn-primary btn-primary-dark">
+											<input type="radio" value="italic" autocomplete="off"><i>italic</i>
+										</label>
+										<label class="btn btn-sm btn-primary btn-primary-dark">
+											<input type="radio" value="bold" autocomplete="off"><b>bold</b>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row justify-content-center">
+
+							<!-- Font Color -->
+							<div class="col-sm-auto">
+								<div class="option" data-optionName="fontColor">
+									<h4>Color</h4>
+									<input type="color">
+									<input type="button" class="btn btn-primary btn-primary-dark colorPickerButton" value="Default"><br>
+									<button type="button" class="btn btn-link btn-link-ptop0 resetLink">reset</button>
+								</div>
+							</div>
+
+							<!-- Font Size -->
+							<div class="col-sm-auto">
+								<div class="option" data-optionName="fontSize">
+									<h4>Size</h4>
+									<input value="Default" type="text" class="input-text-dark"><br />
+									<button type="button" class="btn btn-link btn-link-ptop0 resetLink">reset</button>
+								</div>
+							</div>
+
+							<!-- Alignment -->
+							<div class="col-sm-auto">
+								<div class="option" data-optionName="alignment">
+									<h4>Alignment</h4>
+									<select class="custom-select select-dark">
+										<option value="Default" data-defaultSelected selected>Default</option>
+										<option value="TopLeft">TopLeft</option>
+										<option value="Top">Top</option>
+										<option value="TopRight">TopRight</option>
+
+										<option value="CenterLeft">CenterLeft</option>
+										<option value="Center">Center</option>
+										<option value="CenterRight">CenterRight</option>
+
+										<option value="BottomLeft">BottomLeft</option>
+										<option value="Bottom">Bottom</option>
+										<option value="BottomRight">BottomRight</option>
+									</select><br />
+									<button type="button" class="btn btn-link btn-link-ptop0 resetLink">reset</button>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- colB will be added by JS -->
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="downloadArea">
+						<a href="#"></a>
+						<input type="button" id="downloadButton" class="btn btn-primary btn-primary-dark" value="Create">
+					</div>
+				</div>	
+			</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row">
+
+						<div class="col-md-auto">
+							<strong>Author: </strong>
+							<a href="https://github.com/ShellAddicted">ShellAddicted</a>
+						</div>
+
+						<div class="col-md-auto">
+							<strong>License: </strong>
+							<span>GPL V3+</span>
+						</div>
+
+						<div class="col-md-auto">
+							<strong>Version: </strong>
+							<span>0.0.2</span>
+						</div>
+
+						<div class="col-md-auto">
+							<span>This tool works completely offine, everything is processed in your browser.</span>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+		<!-- Bootstrap JS -->
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/popper/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		
+		<!-- JS -->
+		<script src="js/SubRip.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

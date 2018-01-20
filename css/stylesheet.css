@@ -1,0 +1,314 @@
+/* stylesheet.css part of DualSubCreator
+ * 
+ * Copyright 2017 ShellAddicted <shelladdicted@gmail.com>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3 of the License.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, 
+ * check https://www.gnu.org/licenses/gpl-3.0-standalone.html
+ * or write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+*/
+
+/* LOAD FONTS */
+
+@font-face {
+    font-family: 'JelleeBold';
+    src: url('../fonts/jellee_roman.ttf') format('truetype');
+    font-weight: normal;
+	font-style: normal;
+}
+
+*:not(.options){
+	transition: all 550ms ease;
+}
+
+html{
+	/* used for .footer*/
+	position: relative;
+	min-height: 100%;
+	max-width: 100%;
+	/*end of .footer*/
+}
+
+body{
+	/* Margin bottom by footer height */
+	margin-bottom: 30px; /* if you update this, update also .footer -> height*/
+	background: #333333;
+    color: #fff;
+}
+
+#compatibilityTable{
+	text-align: center;
+	vertical-align: middle;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.microText{
+	font-size: 7pt;
+}
+
+/* used in compatibilityTable (YES/NO) */
+
+.good{
+	color: limegreen;
+}
+
+.bad{
+	color: red;
+}
+
+/* END of used for compatibilityTable (YES/NO) */
+
+#bsalert, input[type=file], input[type=color], .fileLabel, .downloadSrt a, .options, .resetLink{
+	display: none;
+}
+
+/* .dropZone*/
+.dropZone{
+	border: 2px dashed #bbb;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	text-align: center;
+	color: #bbb;
+	height: 16.4vh;
+	width: 95%;
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	margin-bottom: 2vh;
+}
+
+.dropZoneItem{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 95%;
+	font-family: "JelleeBold";
+}
+
+.dropZoneFull{
+	border-style: solid;
+	border-color: green;
+}
+
+/* Effect for dropZone when a file is hovering */
+.onDragOver{
+	border-style: solid;
+	border-color: #0069d9;
+}
+/* end of .dropZone*/
+
+.fileLabel {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+/* .subCol */
+.subCol{
+	margin-top: 0vh;
+}
+
+@media (max-width: 767px){
+	.subCol{
+		margin-top: 5vh;
+	}
+
+	.subCol:nth-child(1){
+		margin-top: 0vh;
+	}
+}
+
+.subCol h2{
+	text-align: center;
+	font-family: 'JelleeBold';
+}
+/* end of .subCol */
+
+.option{
+	text-align: center;
+	margin-top: 2vh;
+}
+
+.suggestedOptions{
+	text-align: left;
+	margin-bottom: -0.5vh;
+}
+
+.suggestedOptions ul{
+	list-style-type: "-";
+	margin-bottom: 0;
+}
+
+.downloadArea{
+	text-align: center;
+	padding: 5px;
+	margin-top: 15px;
+}
+
+#downloadButton{
+	width: 20vh;
+}
+
+.colorPickerButton{
+	box-shadow: unset!important;
+}
+
+.jumbotron{
+	background: #212121;
+	padding: 1rem 0 1rem 0;
+	margin-bottom: 2vh;
+}
+
+/* .introText */
+.introText{
+	text-align: center;
+	font-family: 'JelleeBold';
+}
+
+.introText img {
+	height: 34vh;
+}
+/* end of .introText */
+
+.styleA{
+	color: #2184FF;
+	font-size: 2rem;
+}
+
+.styleB{
+	color: yellow;
+	font-size: 1.5rem;
+}
+
+.styleC{
+	color: limegreen;
+	font-size: 2.1rem;
+}
+
+/* .footer */
+.footer {
+	position: absolute;
+	bottom: 0;
+	height: 30px;
+
+}
+
+.footer *[class^=col]{
+	padding: 0.2em;
+}
+
+@media (min-width: 767px){
+
+	.footer .row [class^="col"]::after{
+		content: "-";
+	}
+	
+	.footer .row [class^="col"]:last-child::after{
+		content: "";
+	}
+
+}
+/* end of .footer */
+
+.logoZone{
+	text-align: center;
+	font-family: "jelleeBold";
+}
+
+/* carousel */
+.custom-carousel-indicators{
+	position: relative;
+	margin-top: 1%;
+	margin-bottom: 0;
+	bottom: 0;
+}
+
+.carousel .carousel-item {
+	height: 40vh;
+}
+
+@media (max-width: 767px){
+	.carousel .carousel-item {
+		height: auto;
+	}
+}
+
+/* end of carousel */
+
+/* Custom alerts */
+.custom-alert-danger{
+    color: #ffffff;
+    background: red;
+    border-color: red;
+}
+
+.custom-alert-warning{
+    color: #ffffff;
+    background: #ff9800;
+    border-color: #ff9800;
+}
+/*end of Custom alerts */
+
+/* Additional CSS for bootstrap's btn-link */
+.btn-link-ptop0{
+	padding-top: 0;
+}
+
+.btn-primary-dark{
+    background:#292929;
+    border-color: #212121;
+    color: #ffffff;
+    box-shadow: none!important;
+}
+
+.input-text-dark {
+	background: #292929;
+	color: #ffffff;
+	border: 2px solid #242424;
+}
+
+.dropdown-dark{
+    background: #292929!important;
+    color: #ffffff!important;
+}
+
+.dropdown-dark .show, .dropdown-dark.show > .btn-primary.dropdown-toggle{
+    background: #292929!important;
+    color: #ffffff!important;
+}
+
+/* HOVER */
+.btn-primary-dark:hover, .input-text-dark:hover, .dropdown-dark.show > .btn-primary.dropdown-toggle{
+	background: #292929;
+    border-color: #ffffff;
+    color: #ffa500;
+}
+
+.custom-dropdown-item{
+    color: #ffffff;
+}
+
+.custom-dropdown-item:hover{
+    background: #0069d9;
+    border-color: #ffffff;
+    color: #ffa500;
+}
+
+.select-dark{
+    background-color: #292929;
+    color: #ffffff;
+}
