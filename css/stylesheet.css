@@ -70,11 +70,7 @@ body{
 
 /* END of used for compatibilityTable (YES/NO) */
 
-.hideme{
-	display: none;
-}
-
-#bsalert, input[type=color], .fileLabel, .downloadSrt a, .options, .resetLink{
+.hideme, #bsalert, .fileLabel, .downloadSrt a, .options, .resetLink{
 	display: none;
 }
 
