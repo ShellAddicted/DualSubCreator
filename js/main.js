@@ -118,7 +118,7 @@ function findBestSyncMatch(entry,entries,startIndex){
 function mergeDualSub(subA, subB, callbackPercentage,eol){
 	var count = 0;
 	var c2 = 0;
-	var result = new SubRip();
+	var result = new SubtitleJS();
 
 	if (typeof eol === "undefined"){
 		eol = result.DEFAULT_EOL;
@@ -130,7 +130,7 @@ function mergeDualSub(subA, subB, callbackPercentage,eol){
 		callbackPercentage(((count*100)/subA.subtitleObj.entries.length)); // %
 
 		c2++;
-		var aEntry = new result.SubtitleEntry();
+		var aEntry = new SubtitleJSEntry();
 		aEntry.id = c2;
 		aEntry.startTime = item.startTime;
 		aEntry.endTime = item.endTime;
@@ -139,7 +139,7 @@ function mergeDualSub(subA, subB, callbackPercentage,eol){
 
 		matches = findBestSyncMatch(aEntry, subB.subtitleObj.entries);
 		c2++;
-		var bEntry = new result.SubtitleEntry();
+		var bEntry = new SubtitleJSEntry();
 		bEntry.id = c2;
 		bEntry.startTime = item.startTime;
 		bEntry.endTime = item.endTime;
@@ -156,7 +156,8 @@ function mergeDualSub(subA, subB, callbackPercentage,eol){
 				
 	}, this);
 	callbackPercentage(100); // %
-    console.log("merge ->> Done.");
+	console.log("merge ->> Done.");
+	console.log(result);
     return result;
 }
 
@@ -342,7 +343,7 @@ function handleFileAdd(evt){
 	jQuery(".options",qx).fadeIn();
 	
 	fr.onloadend = function(){
-		subtitles[id].subtitleObj = new SubRip(fr.result);;
+		subtitles[id].subtitleObj = SubtitleJS.parseFromSubRip(fr.result);
 		subtitles[id].fileName = f.name;
 	}
 	fr.readAsText(f);
